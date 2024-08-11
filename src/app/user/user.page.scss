@@ -1,0 +1,14 @@
+ion-segment-button {
+    --indicator-color: #ff7f50;
+  }
+  ion-radio::part(container) {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 2px solid #ff7f50;
+  }
+  ion-radio::part(mark) {
+    background: #ff7f50;
+    width: 10px;
+    height: 10px;
+  }

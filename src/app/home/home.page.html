@@ -1,0 +1,44 @@
+<ion-content class="ion-padding">
+    <div class="flex justify-between items-center p-4">
+     
+    </div>
+    <div class="faq-container">
+      <h1 class="text-3xl font-bold mb-6 text-gray-800 ">INHENYEN AND CO Questions and Answers on the Nigerian law of copyrights</h1>
+  
+      <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterQuestions()" placeholder="Search questions or categories" class="custom-searchbar" animated></ion-searchbar>
+  <img src="" alt="" srcset="">
+  
+  
+   
+  
+  <img src="./assets/undraw_faq_re_31cw (1).svg" alt="" srcset="" class="mb-8">
+      <div class="faq-list">
+        <div *ngFor="let category of filteredFaqData" class="category mb-6">
+          <div class="category-header" (click)="toggleCategory(category)">
+            <h2 class="text-xl font-semibold text-gray-700">{{ category.title }}</h2>
+            <ion-icon [name]="category.expanded ? 'chevron-up' : 'chevron-down'" class="text-2xl text-gray-600"></ion-icon>
+          </div>
+          <div class="questions" [class.expanded]="category.expanded">
+            <div *ngFor="let question of category.questions" class="question">
+              <div class="question-header" (click)="toggleQuestion(question)">
+                <h3 class="text-lg font-medium text-gray-600">{{ question.question }}</h3>
+                <ion-icon [name]="question.expanded ? 'remove' : 'add'" class="text-xl text-gray-500"></ion-icon>
+              </div>
+              <div class="answer" [class.expanded]="question.expanded">
+                <p class="text-gray-600">{{ question.answer }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <br><br><br><br>
+
+   <!-- Bottom Navigation -->
+ 
+     
+
+        <!-- Bottom Navigation -->
+       
+    </div>
+   </ion-content>
